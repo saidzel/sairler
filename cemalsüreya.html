@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Şairler</title>
+
+	<meta name="keywords" content="../">
+	<meta name="description" content="../">
+	<meta name="author" content="Adem Coşkun">
+	<meta name="classification" content="web tasarım">
+	<meta name="googlebot" content="All, Index, Follow" />
+	<meta name="Robots" content="All, Index, Follow" />
+	<meta name="revisit-after" content="7 days">
+	<meta name="rating" content="General" />
+	<meta name="expires" content="no" />
+	<meta name="language" content="turkish, TR" />
+	<meta name="distribution" content="Global" />
+	<meta name="googlebot" content="NOODP" />
+	<meta name="robots" content="all" />
+	<meta name="robots" content="follow" />
+	<meta name="robots" content="index" />
+	<meta name="distribution" content="global" />
+	<meta name="revisit-after" content="1 Day" />
+	<meta http-equiv="Copyright" content="Copyright © webturkuaz.com">
+
+	
+	<link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="assets/styles/custom.css" type="text/css" />
+	<link rel="stylesheet" href="assets/font/font.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/styles/font-awesome.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/mobile/media-queries.css" type="text/css" />
+
+	
+	<link rel="Shortcut Icon" href="assets/images/icons/fav_icon.png" type="image/x-icon">
+    
+   
+	<script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/custom.js"></script>
+
+
+   
+	<script type="text/javascript" src="assets/scripts/jquery-1.10.1.min.js"></script>
+
+	
+	<script type="text/javascript" src="assets/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	
+	<script type="text/javascript" src="assets/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="assets/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$('.fancybox').fancybox();
+
+			
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+		
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+	
+	<!-- <a class="fancybox" href="1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="1_s.jpg" alt="" /></a> -->
+
+	
+	<!-- <a class="fancybox-effects-a" href="5_b.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"><img src="5_s.jpg" alt="" /></a> -->
+
+    <style type="text/css">
+
+.style1 {
+	font-family: "Times New Roman", Times, serif;
+	font-weight: bold;
+}
+body {
+	background-color: #00FF99;
+}
+.style2 {font-size: x-large}
+-->
+    </style>
+</head>
+
+<body>
+&nbsp;
+<div class="enust">
+	
+	<div class="ortala">
+		
+	</div>
+</div>
+
+
+<div class="enust-alt">
+	
+	<div class="ortala">
+		
+		<div class="menu"> <a href="index.html" class="anasayfa">
+		</a>
+			<span class="menu_home_line"></span>
+			<ul>
+				<li> <a href="index.html">ANASAYFA&nbsp;</a></li>
+				<li><a href="nazımhikmet.html">NAZIM HİKMET&nbsp;</a></li>
+				<li><a href="cemalsüreya.html">CEMAL SÜREYYA&nbsp;</a></li>
+				<li><a href="edipcansever.html">EDİP CANSEVER</a></li>
+				<li><a href="orhanveli.html">ORHAN VELİ KANIK</a></li>
+				<li><a href="said.html">SAİD ÖZEL</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="style2">
+<div class="orta">
+
+  </div>
+<p>&nbsp;</p>
+<p align="center">&nbsp;</p>
+<div>
+  <div align="center"><img src="https://icdn.ensonhaber.com/crop/320x241-85/resimler/diger/cemal-sureya_9042.jpg" alt="Cemal Süreya kimdir">  </div>
+  <h1 align="center" class="style1">Cemal Süreya kimdir</h1>
+</div>
+<p align="center" class="style1">Afrika dahil bütün kara parçalarında kaleminden aşka inandığımız şair, Cemal Süreya'nın hayat hikayesidir.</p>
+<div class="style1"></div>
+<p align="center" class="style1">Küllerini aşktan doğurup savuran, aşka aşık, özgür ruhunu gökyüzünden dünyaya kolye yapmış şiirleriyle sallandıran adam, Cemal Süreya Seber.</p>
+<p align="center" class="style1">O daha çocukluğundan başladı şiirlerine. Pek içli, duygu yüklüydü ve yeni şeyler öğrenmeye de açtı. Açlığını kalemiyle bastırdı. Çocukken kantinde yazılar yazmaya başlayan Cemal, gürültüyle şiirlerini yazmaya alışacak,  sonra da hep yazarken gürültü arayacaktı mesela.</p>
+<p align="center" class="style1">Kumarla arası asla olmayan Cemal, yazar arkadaşlarıyla birleşip bir poker oynayamayacaktı.</p>
+<p align="center" class="style1">Onun derdi günü sevgiyi kovalamak ve sevda üzerine sözler söylemekti çünkü. Bir aşık gibi aşık oldu hep. Her seferinde ilk kezmiş gibi. Bu yetti de arttı. Hissetti, yaşadı ve her bir duygusunu bize de aktardı.</p>
+<p align="center" class="style1">Acaba biz de feyz alıp böylesine tutkulu sevebilir miyiz diye belki, kim bilir…</p>
+<p align="center" class="style1">Sahi, sevebilir miyiz?</p>
+<h4 align="center" class="style1">Çocukluğu</h4>
+<p align="center" class="style1">Cemal 1931’de Erzincan Pülümür’de Hüseyin Bey ve Gülbeyaz Hanım’ın oğlu olarak dünyaya geldi. Ailesinin ona verdiği asıl isim<em> Cemalettin Seber</em>’di. Zaza Alevi asıllıydı.</p>
+<p align="center" class="style1">Çocukluğunu, 1938 Dersim İsyanı sonrasında babası Bilecik’e sürgün edilene kadar Erzincan’da geçirdi. Pülümür’den yola çıkan Seber ailesi artık Bilecik’te yaşayacaktı. Üstelik buradan başka bir şehre de gidişleri yasaktı.</p>
+<p align="center" class="style1">Annesi Gülbeyaz Hanım tüm bu acıların içinde erken yenildi. Cemalettin de annesinin erken ölümü üzerine İstanbul’a gönderildi. Anne babadan ayrı bir çocukluk ve okul hayatı yaşayacaktı artık Cemalettin. ,</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/ce_7456.jpg" alt="" width="600" height="600" src="https://icdn.ensonhaber.com/resimler/diger/ce_7456.jpg"></p>
+<h4 align="center" class="style1">Eğitim hayatı</h4>
+<p align="center" class="style1">Cemalettin İstanbul’da ilkokul eğitimine başladı. Daha ilkokul sıralarındayken bir dergi çıkarmaya karar verdi. Şairlik duygusu daha ana kucağından üzerine yapışmış gibiydi, bu isteğe karşı duramıyordu. Çünkü <em>‘’kalbimin kuşu’’</em> diye adlandırdığı annesi, ona<em> ’’Kerem ile Aslı’’</em>yı anlattığında düşmüştü gönlüne şiir sevdası.</p>
+<p align="center" class="style1">İşte şimdi de daha boyuna posuna bakmadan dergi çıkarmak istiyordu. Tek engeli de baskı malzemelerinin azlığı, var olanların da kalitesizliğiydi. Ama vazgeçmedi. Sıkı dost olduğu Altan Günalp ile beraber oturup el yazısı ile yazdılar, resimler çizdiler, çıkardılar dergilerini. En büyük destekçileri de Cemalettin’e hayran olan kızlardı…</p>
+<p align="center" class="style1">Müthiş bir kitap kurduydu Cemalettin. Daha ilkokul 3. sınıftaydı ki,<em> ‘’Suç ve Ceza’’</em> ile <em>‘’Karamazov Kardeşler’’</em>i defalarca okumuştu.</p>
+<p align="center" class="style1">1942’de Bilecik’e geri getirildi. Aynı dönemde babası tekrar evlenmişti. Bu evlilik Cemalettin için can sıkıcıydı. Kalbinin küçük kuşu ölen çocuk, şimdi de üvey annesi Esma’nın eline mahkum olmuştu. Esma Hanım kız kardeşleri ve Cemalettin’i sürekli dövüyordu. Hatta bir keresinde Cemalettin’i zehirlemeye bile kalkıştı. Cemalettin için hazırladığı yemeklere de cam kırıkları attığı biliniyordu.</p>
+<p align="center" class="style1">Cemalettin ortaokulu burada okudu. Seniha Nemli ile bu sıralarda tanıştı. O an farkında değildi ama yıllar sonra Seniha, ilk eşi olacaktı.</p>
+<p align="center" class="style1">Ortaokulda Cemalettin 100 metre koşu yarışına katıldı ve yarışmada birinci gelmişti. Hediyesi ise kalemdi ve bunun Cemalettin için anlamı büyüktü. Yazma sevdasına düşmüş küçük bir çocuğun ilk dolma kalemiydi bu çünkü ve dünyalara değerdi.</p>
+<p align="center" class="style1">Bu yıllarda bir şey keşfetti Cemalettin. Tüm büyük yazarların üç tane adı vardı, kendisinin neden olmasındı. Keşfetmesiyle kararını vermesi de bir oldu. İlk adını Cemal olarak kısaltıp yanına da Süreyya’yı ekleyecek ve tam adı<em> ‘’Cemal Süreyya Seber’’ </em>olacaktı.</p>
+<p align="center" class="style1">Ortaokuldan sonra Cemalettin babasına haber</a> vermeden sınavlara girdi ve Haydar Paşa Lisesi’ne yatılı – burslu olarak kaydoldu. Cemalettin lisedeyken üvey anne kabusu da bitmişti. Esma Hanım yaşanan bir olaydan sonra evden ayrıldı. Babası da bir süre sonra tekrar evlendi. Ama bir önemi yoktu artık. Cemalettin yazdığı şiirlerin ve okuduklarının da etkisiyle büyüyordu.</p>
+<p align="center" class="style1">Eğitim hayatını Ankara Üniversitesi Siyasal Bilgiler Fakültesi - Maliye ve İktisat Bölümü’nde tamamladı. Üniversite hayatı ona Muzaffer Erdost, Sezai Karakoç, Hasan Basri, Nihat Kemal Eren gibi isimlerle yakın arkadaşlıklar getirmişti.</p>
+<p align="center" class="style1"><em>Sezai Karakoç</em> ile dostlukları tüm fikir ayrılıklarına rağmen daha da sağlam ilerleyecekti. Çünkü sevginin getirdiği dostluk da aşk da böyleydi işte.</p>
+<p align="center" class="style1">Şimdi sormadan da duramıyorum; onlar fikirleri de zikirleri de ne olursa olsun çok iyi dost olmayı bilmişken, bugün onları okuyanlar neden iki kutba ayrılır?</p>
+<p align="center" class="style1">Ya da insan sevmek söz konusuyken neden bir kutba çeker o güzel yüreğini?</p>
+<h4 align="center" class="style1">İş hayatında Cemal Süreya</h4>
+<p align="center" class="style1">Üniversite mezuniyetinden sonra memuriyet hayatına başladı. Şiir hayatı ayrı bir köşedeydi hayatında ve ruhunda. Maliye Bakanlığı’nda müfettiş yardımcılığı ve müfettişlik, Darphane müdürlüğü, Kültür Bakanlığı’nda kültür danışma kurulu üyeliği, Orta Doğu İktisat Bankası yönetim kurulu  üyeliği ve 25 yıldan fazla Türk Dil Kurulu üyeliği yaptı.</p>
+<p align="center" class="style1">Bunlardan başka yazı hayatını da memuriyete taşıdı. Emekliliğinde yayınevlerinde danışmanlık ve ansiklopedilerde redaktörlükle çevirmenlik yaptı.</p>
+<p align="center" class="style1">1960 Ağustos’unda çıkardığı <em>Papirüs</em> dergisini yalnızca 4 sayı yayınlayabildi. Pazar Postası, Aydınlık, Yeditepe, Oluşum, Politika gibi birçok yayın kuruluşunda şiir ve yazılarını yazdı.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_1106.jpg" alt="" width="600" height="557" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_1106.jpg"></p>
+<h4 align="center" class="style1">Şiir hayatı</h4>
+<p align="center" class="style1">Şiire yüklediği duygu yüklü anlamla annesinin ona <em>‘’Kerem ile Aslı’’</em>yı anlattığı zaman başlamış olsa da, fiziksel koşullar lise yıllarındaki aruz denemelerini gösteriyordu. İlk şiirine<em> ‘’Şarkısı Beyaz’’ </em>adını vermişti ve bu şiir 8 Ocak 1953’te <em>''Mülkiye'' </em>dergisinde yayınlanacaktı.</p>
+<p align="center" class="style1">Üniversite yıllarında ise çeşitli takma adlar kullanarak muhtelif dergi ve gazetelerde yazılarını yayımladı.</p>
+<p align="center" class="style1">1950’li yılların başında gelişme gösteren<em> ‘’ikinci yeni hareketi’’</em> ne katıldı Cemal, ama tam olarak da bu akımla kesiştiremedi kalemini. O daha çok<em> ‘’garip’’</em> akımının etkisinde gibiydi. Özgür olmalıydı o, Cemal Süreya olabilirdi işte o zaman. Kaleminin özgür olması demek, ruhunun da özgür olması demekti. İşte bu yüzden, Cemal Süreya, kendi özgürlük akımını yarattı. Bununla birlikte şiirde anlamsızlığı savunan görüşleri vardı. Şiir ona göre anlamsız cümlelerin duygular katılarak anlam yüklenmesiyle yazılıyordu.</p>
+<p align="center" class="style1">Karşı çıktığı ne varsa, kalemini onunla besledi. Şiirlerinde erotizm tüm canlılığıyla insanın karşısına dikiliyordu, ama toplumun değerlerini de çiğneyip geçmiyordu. Şiir ona göre<em> ‘’anayasaya aykırı’’</em>ydı.  Hatta doğanın ahlakı kovduğu yerdeydi ve üstelik yasadışıydı.</p>
+<p align="center" class="style1">Bu düşünceyi savunmasından sebep şiirleri hiçbir zaman hikaye barındırmadı. Bunun yerine özel imgelerin oluşturduğu bir söz sanatı açıklarında yüzüyordu.</p>
+<p align="center" class="style1">1953’te ilk şiiri ‘’Şarkısı Beyaz’’ın yayınlanmasının ardından dergilerde karikatürleri de yayınlandı Cemal’in ve kendisini edebiyat dünyasına tanıtan şiirine de<em> ‘’Gül’’ </em>adını vermişti. 1955’te ise bugün onu anmamıza sebep olacak en güzel şiirini yazdı; adı, <em>‘’Üvercinka’’</em>ydı ve <em>‘’Dalga, Güzelleme, Üçgenler, Cigarayı Denize Attım, Nehirler Boyunca Kadınlar Gördüm’’ </em>gibi önemli eserleriyle birlikte dergilerde yayınlandı.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_7950.jpg" alt="" width="600" height="379" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_7950.jpg"></p>
+<h4 align="center" class="style1">Üvercinka</h4>
+<p align="center" class="style1">Cemal Süreya biyografisi yazılır da bu şiir hiç atlanır mı?</p>
+<p align="center" class="style1"><em>‘’</em></p>
+<p align="center" class="style1"><em>Böylece bir kere daha boynunlayız sayılı yerlerinden</em></p>
+<p align="center" class="style1"><em>En uzun boynun bu senin dayanmaya ya da umudu  kesmemeye</em></p>
+<p align="center" class="style1"><em>Laleli'den dünyaya doğru giden bir tramvaydayız</em></p>
+<p align="center" class="style1"><em>Birden nasıl oluyor sen yüreğimi elliyorsun</em></p>
+<p align="center" class="style1"><em>Ama nasıl oluyor sen yüreğimi eller ellemez</em></p>
+<p align="center" class="style1"><em>Sevişmek bir kere daha yürürlüğe giriyor</em></p>
+<p align="center" class="style1"><em>Bütün kara parçalarında</em></p>
+<p align="center" class="style1"><em>Afrika dahil</em></p>
+<p align="center" class="style1"><em>…’’</em></p>
+<p align="center" class="style1">Ben küçük bir kısmını yazabildim. Ama lütfen siz tamamını okuyup kendinizi ödüllendirin.</p>
+<h4 align="center" class="style1">Cemal Süreya evlendi</h4>
+<p align="center" class="style1">Cemal, henüz üniversitedeyken ortaokulda sınıf arkadaşı olan Seniha Nemli ile evlendi. Onlarınki bir nevi çocukluk aşkıydı. 1954’te mezun olmuştu. Ancak Seniha ile evlilikleri de bu süreçte çatırdamaya başladı. 1955’te Ayçe adını verdikleri bir kız çocukları oldu, ama o ilk çıt sesinden sonra evliliklerinin sonu aslında belliydi.</p>
+<p align="center" class="style1">Ayçe’nin doğumundan sonra Cemal’in tayini Müfettiş yardımcısı olarak İstanbul’a çıktı. Evlilikleri bir süre daha devam etti ve sonra ayrıldılar.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_2207.jpg" alt="" width="600" height="338" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_2207.jpg"></p>
+<h4 align="center" class="style1">Süreyya değil Süreya</h4>
+<p align="center" class="style1">Aslında küçük bir çocukken, adı henüz Cemalettin Seber o zamanlar, bir yazarın üç adı olması gerektiğini tespit edip, Cemal Süreyya Seber olarak değiştirmişti adını.</p>
+<p align="center" class="style1">Ancak iddiaya girmeyi çok seviyordu Cemal. Bir gün arkadaşıyla bir telefon numarası üzerine iddiaya girdi. Kaybederse soyadındaki<em> ‘’y’’ </em>harflerinden birini sildirecekti. İddiayı kaybetti ve bize de onu Cemal <em>‘’Süreya’’ </em>olarak tanımak düştü.</p>
+<p align="center" class="style1">Bir harf sildirdiği soyadı, ilk kez 1956’da, <em>‘’Elma’’ </em>şiirinin imzasında kayda geçmişti.</p>
+<h4 align="center" class="style1">Cemal Süraya’nın babası öldü</h4>
+<p align="center" class="style1">1957’de Cemal’in babası Hüseyin Bey hayatını kaybetti. Elbette bugüne kadar yazdığım birçok biyografinin sahibinin de babası öldü. Ama bu başkaydı. Bu bir babanın ölümünün ardından o mükemmel şiiri yazan Cemal Süreya’nın babasıydı.</p>
+<p align="center" class="style1">Cemal Süreya’yı babasının ölümü çok sarstı ve bütün duygusunu<em> ‘’Sizin Hiç Babanız Öldü mü’’ </em>şiirine akıttı.</p>
+<p align="center" class="style1"><em>''</em></p>
+<p align="center" class="style1"><em>Sizin hiç babanız öldü mü?</em></p>
+<p align="center" class="style1"><em>Benim bir kere öldü, kör oldum</em></p>
+<p align="center" class="style1"><em>Yıkadılar, aldılar, götürdüler</em></p>
+<p align="center" class="style1"><em>Babamdan ummazdım bunu, kör oldum</em></p>
+<p align="center" class="style1"><em>Siz hiç hamama gittiniz mi?</em></p>
+<p align="center" class="style1"><em>Ben gittim, lambanın biri söndü</em></p>
+<p align="center" class="style1"><em>Gözümün biri söndü, kör oldum</em></p>
+<p align="center" class="style1"><em>Tepede bir gökyüzü vardı yuvarlak</em></p>
+<p align="center" class="style1"><em>Söylelemesine maviydi, kör oldum</em></p>
+<p align="center" class="style1"><em>Taşlara gelince hamam taşlarına</em></p>
+<p align="center" class="style1"><em>Taşlar pırıl pırıldı ayna gibiydi</em></p>
+<p align="center" class="style1"><em>Taşlarda yüzümün yarısını gördüm</em></p>
+<p align="center" class="style1"><em>Bir şey gibiydi bir şey gibi kötü</em></p>
+<p align="center" class="style1"><em>Yüzümden ummazdım bunu, kör oldum</em></p>
+<p align="center" class="style1"><em>Siz hiç sabunluyken ağladınız mı?''</em></p>
+<p align="center" class="style1">Babasının ölümünün ardından Cemal kendini kalemine daha çok kaptırmıştı. Çok değil bu sarsıcı ölümün üzerinden bir yıl sonra, 1958’de, <em>''Üvercinka''</em> adını verdiği ilk şiir kitabını çıkardı.</p>
+<p align="center" class="style1">Kitap oldukça ilgi çekti ve 1959’da<em> ‘’Yeditepe Şiir Armağanı’’</em>nı kazandırdı Cemal Süreya’ya. Bu zaman zarfında<em> ‘’Papirüs’’ </em>dergisini de açtı.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_7999.jpg" alt="" width="600" height="374" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_7999.jpg"></p>
+<h4 align="center" class="style1">Cemal Süreya tekrar evlendi</h4>
+<p align="center" class="style1">Cemal, 1967’de dönemin önemli dergilerinden<em> ‘’Yelken’’</em>de çalışan Zuhal Tekkanat ile evlendi. Bu evlilikten Memo Emrah adını verdikleri bir çocukları oldu.</p>
+<p align="center" class="style1">Zuhal bir süre hasta yattı, büyü bir kalp rahatsızlığı vardı. Bu süreçte Cemal Süreya bir an olsun yanından ayrılmadı Zuhal’in. Her an aşkla baktı ona; mektuplar yazdı. Biriktirdiği mektupları daha sonra <em>‘’Onüç Günün Mektuplar</em>ı’’ adıyla kitaplaştırdı.</p>
+<p align="center" class="style1">Ancak bir yandan da maddi sıkıntı yaşıyorlardı. Cemal memuriyete geri dönmüştü ve ataması da Ankara’ya yapıldı. Ancak Zuhal İstanbul’da kaldı. Bir süre ayrı yaşadılar ve sonunda Zuhal de eşinin yanına gitti.</p>
+<p align="center" class="style1">Yeniden birlikte yaşamaya başlamışlardı ancak bir şeyler oluyordu. Neredeyse buna şiddetli geçimsizlik denebilirdi. Üstelik bir de üstüne her iki taraf da birbirini öldüresiye kıskanıyordu. Bu süreç fazla uzun yaşanamazdı. Sonunda ayrıldılar.</p>
+<p align="center" class="style1">Cemal Süreya’nın hayatı kadınlar ve tutku üzerine kuruluydu adeta. O bekar bir adam olamazdı. Hayatının merkezine aşkı koymuştu bir kere…</p>
+<p align="center" class="style1">1975’te, işte tam da bu sebepten, Cemal üçüncü kez evlendi. Güngör Demiray ile büyük bir aşk yaşadılar ve hemen üzerine evlendiler. Ancak büyük aşkın evliliği sadece bir yıl sürdü.</p>
+<p align="center" class="style1">Bu ayrılık safhasını yaşarken bir ara ikinci eşi Zuhal’le bir kere daha denemek istediler, ancak yine ayrılıkla sonuçlandı.</p>
+<p align="center" class="style1">En sonunda Cemal, bir kitap evinin de sahibi olan Birsen Sağnak ile evlendi. Birsen, hali hazırda 4 çocuğu olan bir kadındı. Toplumun sırtında kambur olarak göreceği bu durumu önemsememişti Cemal. Birsen öylesine şefkat dolu, merhametli bir kadındı ki, Cemal’in bütün çekilmez yanlarına yaklaşmayı iyi bilmişti. Ölene kadar yaşayacağı sol yanı, masumiyetle bulmuştu.</p>
+<h4 align="center" class="style1">Cemal Süreya yargılandı</h4>
+<p align="center" class="style1">Son evliliğine kadar Cemal, birçok devlet kademesinde müfettişlik yaptıktan sonra 1982’de emekli oldu.</p>
+<p align="center" class="style1">Ancak emeklilik ona pek yaramadı, çünkü emeklilik maaşı yetmiyordu. Şükürler olsun ki bu kez evliliğinde bir sorun yoktu. Birsen yuvasının rahatını çok iyi sağlıyordu. Ancak çalışmalıydı.</p>
+<p align="center" class="style1">Bu sebeple bir bankada çalışmaya başladı. Ancak bir süre sonra banka iflas etti ve yargılananlar arasında Cemal Süreya da vardı. Neyse ki, davası beraat ile sonuçlanmıştı.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_3893.jpg" alt="" width="600" height="450" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_3893.jpg"></p>
+<h4 align="center" class="style1">Büyük aşk, Tomris Uyar</h4>
+<p align="center" class="style1">Tomris Uyar’ı edebiyat dünyası gencecik yaşta tanıdı; deneme ve öykü yazarıydı. Gazeteci ve Şair Ülkü Tamer’in biricik karısıydı.</p>
+<p align="center" class="style1">Tomris, Tamer ile evliyken Cemal Süreya’ya aşık oldu. Üstelik Cemal Süreya da evliydi. Birbirleri için eşlerinden boşandılar. Bugün bile edebiyat dünyası bu aşkın tanımını<em> ‘’Türk edebiyatının en verimli aşkı’’ </em>olarak yapar. Üç yılları birlikte geçti. Tomris, 4 evliliğin arasında yaşanmış büyük bir aşktı.</p>
+<p align="center" class="style1">Gerçekten de verimliydi aşkları, çünkü, Cemal Süreya en içli aşk şiirlerini yazıyordu Tomris için.</p>
+<p align="center" class="style1">En güzeli de kuşkusuz <em>‘’Sayım’’</em> dı:</p>
+<p align="center" class="style1"><em>''</em></p>
+<p align="center" class="style1"><em>Ay ışığında oturduk</em></p>
+<p align="center" class="style1"><em>Bileğinden öptüm seni</em></p>
+<p align="center" class="style1"><em>Sonra ayakta öptüm</em></p>
+<p align="center" class="style1"><em>Dudağından öptüm seni</em></p>
+<p align="center" class="style1"><em>Kapı aralığında öptüm</em></p>
+<p align="center" class="style1"><em>Soluğundan öptüm seni</em></p>
+<p align="center" class="style1"><em>Bahçede çocuklar vardı</em></p>
+<p align="center" class="style1"><em>Çocuğundan öptüm seni</em></p>
+<p align="center" class="style1"><em>Evime götürdüm yatağımda</em></p>
+<p align="center" class="style1"><em>Kasığından öptüm seni</em></p>
+<p align="center" class="style1"><em>Başka evlerde karşılaştık</em></p>
+<p align="center" class="style1"><em>İliğinden öptüm seni</em></p>
+<p align="center" class="style1"><em>En sonunda caddelere çıkardım</em></p>
+<p align="center" class="style1"><em>Kaynağından öptüm seni''</em></p>
+<p align="center" class="style1">Bundan başka hep bir içli, bir acıklıydı Cemal Süreya’nın dizeleri. Adeta aşkı bir morfin gibi alıyordu vücuduna. Yoksa bir adam bir kadına şöyle diyebilir miydi?</p>
+<p align="center" class="style1"><em>''</em></p>
+<p align="center" class="style1"><em>Daha nen olayım isterdin</em></p>
+<p align="center" class="style1"><em>Onursuzunum senin!''</em></p>
+<p align="center" class="style1">En verimli aşk onlarındı evet, ama Tomris’in hayranı çoktu. Bunlardan sadece üç tanesi şairdi:<em> ''Cemal Süreya, Turgut Uyar, Edip Cansever''</em></p>
+<p align="center" class="style1">Ancak sonradan Turgut Uyar’la evlendi Tomris ve onun çocuğunu doğurdu. Aşkları, hayranlıkları hakkında da asla konuşmadı. Hoş konuşmasa ne çıkar, Cemal Süraya’nın şiirlerinden aşk akıyordu. Edip Cansever de her sene Tomris’in doğum gününde manidar bir şiir yayınlamaktan geri durmuyordu. Her şey gün be gün ortadaydı işte.</p>
+<p align="center" class="style1">Bir gün Cemal Süreya ile ilişkisi sorulduğunda şunları söyledi sadece Tomris: <em>“Beni bıraktı ama rahat edemedi. Ona göre bana sahip olunamazdı. </em>‘Senden ayrıldığım anda, senin hakkında, hikâyen hakkında sevdiğimi belirtecek hiçbir şey söylemeyeceğim; benim ağzımdan kimse duymayacak’ <em>dedi ve doğrusu hiç yazmadı”</em><br>
+  Sadece bu aşkın ömrü üç yıllıktı ve tükenmişti. Geriye de güzel bir dostluk bırakmıştı.</p>
+<p align="center" class="style1">Yine de aşktı bunun adı, geriye dostluk bırakabilirdi tabii, ama öfkesiz de olmazdı. Tomris, Cemal Süreya’nın büyük aşkıydı. Cemal’in kadınlara ve aslında aşka olan düşkünlüğü düşünülürse, bu aşkın haliyle kendisi kadar öfkesi de büyük olacaktı. Bir tartışmanın ardından tutkuyla yazdığı mektupları yırtıp attı. Bu mektuplardaki aşk da böylece onların arasında kaldı.</p>
+<p align="center" class="style1">Aşk kendini her mekanda anımsatırdı. İşte bu yüzden Tomris’le gittiği hiçbir mekana bir daha uğramadı Cemal Süreya…</p>
+<p align="center" class="style1">Bir küçük hikaye daha var aktarmak istediğim. Tomris yakınlarına anlatmış bir zamanlar bu Cemal Süreya anısı. Biz şimdi sosyal medyada görüyoruz sık sık, aşkın tanımı olarak:</p>
+<p align="center" class="style1">Her akşam iş çıkışı hiçbir yere uğramadan eve koşarmış Cemal Süreya. Tomris bir gün, <em>‘’Biraz gez, dolaş; arkadaşlarınla buluş’’ </em>demiş. Ertesi gün ve ondan sonraki günlerde geç gelmeye başlamış Cemal.</p>
+<p align="center" class="style1">Ama bir akşam örtü silkelemek için cama çıkan Tomris, aşağıda bekleyen Cemal’i fark etmiş. Belli ki zamanını dolduruyormuş. Tomris Uyar bu durumun adını,<em> ‘’Şahsiyet Rötarı’’ </em>koymuş.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_3621.jpg" alt="" width="600" height="471" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_3621.jpg"></p>
+<h4 align="center" class="style1">Özgür ruhlu şair, Cemal Süreya</h4>
+<p align="center" class="style1">Cemal Süreya ruhunu şiirlerinde okuyucusuyla samimiyetle paylaşan bir şairdi. Ancak bunun yanında nesriyle de edebiyatta adında söz ettirmeyi bilmişti.</p>
+<p align="center" class="style1">Bir süre <em>‘’Politika’’ </em>gazetesinde köşe yazarlığı yaptı. Bu yıllarda <em>‘’Şapkam Dolu Çiçeklerle’’</em> adını verdiği deneme kitabını yayımladı.</p>
+<p align="center" class="style1">1977’de de<em> ‘’Emeğin ve Emekçinin Tarihi’’</em> adlı eserini yayımladığında daha birçok eseriyle birlikte nesirdeki başarısını iyiden iyiye kanıtlamıştı.</p>
+<p align="center" class="style1"><em>‘’Aydınlık’’ </em>gazetesinde de yazdı. 1884’te<em> ‘’Sevda Sözleri’’ </em>adını verdiği en güzel sözlerinden kitap yaptı ve aslında o gün kanıtladı ki, herkesin<em> ‘’en güzel’’</em> yaptığı bir şeyler vardı. Kimi roman yazar, kimi çok iyi resim yapar, hatta kimi çok iyi küfür ederdi. İşte Cemal Süreya’nın da en güzel yaptığı iş, sevda sözleri söylemekti; şiirler yazmaktı.</p>
+<p align="center" class="style1">Tüm bunların yanında, bir de çocuk yanını gösterdi Cemal Süreya; çocuk edebiyatı ile ayrı bir bağ kurdu. <em>‘’Çocukça’’</em> dergisinde <em>‘’Aritmetik Kuşlar Pekiyi’’</em> adını verdiği bir köşeden seslendi çocuklara. Bu işin de ustalıkla hakkını vermişti üstelik.</p>
+<h4 align="center" class="style1">Futbol tutkunu Cemal Süreya</h4>
+<p align="center" class="style1">Cemal Süreya çok iyi bir şairdi ve kompozisyon konusunda da en az şiir konusunda olduğu kadar iyiydi. Üstelik bu çocuk yaşlarından beri böyleydi. Herkesin kompozisyon ödevine yetişmekten gocunmayacak kadar çok seviyordu kalemini konuşturmayı. Arası sayılarla hiç iyi olamadı ama. Saatin kaç olduğunu söyleyebildiğinde neredeyse ortaokula geçmişti.</p>
+<p align="center" class="style1">Şiirle haşır neşirken bambaşka bir Cemal Süreya vardı. İşte bir de futbol vardı onu zevklendiren ve rahatlatan. Koyu bir Fenerbahçeli’ydi ve en sevdiği futbolcu da Lefter’di.  Bunun yanında Metin Oktay’ı büyük bir saygı ile seviyordu.</p>
+<p align="center" class="style1">İki takım kurmuşlardı, maç bile yapıyorlardı.<em> ‘’Edebiyatçılar’’</em>, <em>''Tiyatrocular’’</em>a karşı oluyordu ve her zaman da gol kralı Orhan Kemal'di.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_6923.jpg" alt="" width="600" height="322" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_6923.jpg"></p>
+<h4 align="center" class="style1">Süreyya Kapınak’ın soyad sahibi, Cemal Süreya</h4>
+<p align="center" class="style1">Süreyya Kapınak soyadını değiştirmek istiyordu. Yemekli bir toplantıda şair ve yazar arkadaşlarına bu isteğini anlattı ve onlardan öneri bekledi.</p>
+<p align="center" class="style1">Ancak hiçbir öneri aklına yatmamıştı, ta ki Cemal Süreya’nın önerisini duyana kadar. Cemal Süreya, ona soyadını<em> ‘’Berfe’’ </em>yapması fikrini sundu. Süreyya Kapınak ilk iş bu kelimenin anlamını sordu. Anlamını da öğrendiğinde artık kararını vermişti.</p>
+<p align="center" class="style1">Berfe, Kürtçe’de<em> ‘’kar’’</em> demekti. Cemal, bu sözcüğü bir gün Ahmed Arif’ten duymuştu. Ahmed Arif bir kızı olsa Berfe koyacaktı adını.</p>
+<p align="center" class="style1">Belki  bir kız çocuğuna kısmet olamadı bu isim hayal edildiği gibi, ama <em>‘’Süreyya Berfe’’</em>yi yeniden doğurmuştu adeta.</p>
+<p align="center" class="style1"><img data-src="//icdn.ensonhaber.com/resimler/diger/cemal-sureya_9267.jpg" alt="" width="600" height="338" src="https://icdn.ensonhaber.com/resimler/diger/cemal-sureya_9267.jpg"></p>
+<h4 align="center" class="style1">Cemal Süreya öldü</h4>
+<p align="center" class="style1">Her biyografide en üzücü başlığım bu olsa gerek. Adeta yıl be yıl birlikte yaşar gibi zaman tünelindeyim sanki ve sevdiğim insanlar bitiş noktasında bir kere daha benim şahitliğimde de ölüyor gibi. Bense uzaktan izliyorum bütün seramoniyi…</p>
+<p align="center" class="style1">Öyle işte, hiç ölmemesi gereken isimlerden biri daha öldü.</p>
+<p align="center" class="style1">Sigara alışkanlığından kurtulmuş olsa da, Cemal Sürey alkolü bir türlü bırakamamıştı. Ama asıl sorun bu değil, oğlu Memo idi.</p>
+<p align="center" class="style1">Memo, günden güne daha bir fütursuz, daha bir savurgan oluyordu. Babasıyla sürekli büyük kavgalar ediyordu. Hatta babasının değerli kitaplarını çalıp sahaflara satıyordu. Cemal Süreya bu durumdan büyük ızdırap duyuyordu.</p>
+<p align="center" class="style1">Memo bir kavgaları sırasında babasını ağır darp etti. Cemal Süreya hastaneye kaldırıldığında vücudunda çok fazla morlukları, yaraları vardı. Ama asıl yarası kalbindeydi ve üzüntüsü neredeyse fiziksel anlamda dahi görülecek kadar vücudundan taşıyordu.</p>
+<p align="center" class="style1">Bu acı artık onu daha fazla yaşatamazdı.</p>
+<p align="center" class="style1">Cemal Süreya, 9 Ocak 1990’da, huzursuz bir şekilde, öldü…</p>
+<p align="center" class="style1">Bence Cemal Süreya, o anda hasretle beklediği kız çocuklarını düşündü. Olmasını çok istediği, ama olmayan iki kız çocuğunu;<em> ‘’Kelime ve Elif’’</em>i. Memo’nun içine bıraktığı acı, bu hasreti harlamış olmalıydı.</p>
+<p align="center" class="style1">İnsan neye sahip olursa olsun, olamadıklarının hasretiyle yaşar ve ölür ya, ne bileyim öyle doğdu benim de içime birden işte. Ya da belki benim de içimi yaktı, Memo’nun yaptıkları.</p>
+<p align="center" class="style1">Ama ne olursa olsun, bu dünyadan bir Cemal Süreya geçti.</p>
+<p align="center" class="style1">Üstelik hayat gerçekten kısa ve kuşlar uçuyordu...</p>
+<p align="center" class="style1">Üstelik boynuyla ve sayılı yerlerinden…</p>
+<p align="center" class="style1">Tüm kara parçalarında…</p>
+<p align="center" class="style1">Ve Afrika hariç olamazdı…</p>
+<p align="center" class="style1">İyi ki…</p>
+<p align="center" class="style1">&nbsp;</p>
+<p align="center" class="style1">&nbsp;</p>
+<p align="center" class="style1">&nbsp;</p>
+<p align="center" class="style1">&nbsp;</p>
+<p align="center" class="style1">&nbsp;</p>
+<p align="center"><span class="style1"><img src="Cemal_Süreya.jpg" width="400" height="600" alt=""/></span>&nbsp;</p>
+</div>
+
+
+</body>
+</html>

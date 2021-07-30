@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Şairler</title>
+	<meta name="keywords" content="../">
+	<meta name="description" content="../">
+	<meta name="author" content="Adem Coşkun">
+	<meta name="classification" content="web tasarım">
+	<meta name="googlebot" content="All, Index, Follow" />
+	<meta name="Robots" content="All, Index, Follow" />
+	<meta name="revisit-after" content="7 days">
+	<meta name="rating" content="General" />
+	<meta name="expires" content="no" />
+	<meta name="language" content="turkish, TR" />
+	<meta name="distribution" content="Global" />
+	<meta name="googlebot" content="NOODP" />
+	<meta name="robots" content="all" />
+	<meta name="robots" content="follow" />
+	<meta name="robots" content="index" />
+	<meta name="distribution" content="global" />
+	<meta name="revisit-after" content="1 Day" />
+	<meta http-equiv="Copyright" content="Copyright © webturkuaz.com">
+
+	
+	<link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="assets/styles/custom.css" type="text/css" />
+	<link rel="stylesheet" href="assets/font/font.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/styles/font-awesome.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/mobile/media-queries.css" type="text/css" />
+
+	
+	<link rel="Shortcut Icon" href="assets/images/icons/fav_icon.png" type="image/x-icon">
+    
+  
+	<script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/custom.js"></script>
+
+
+   
+	<script type="text/javascript" src="assets/scripts/jquery-1.10.1.min.js"></script>
+
+	
+	<script type="text/javascript" src="assets/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	
+	<script type="text/javascript" src="assets/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="assets/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$('.fancybox').fancybox();
+
+			
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+	
+	<!-- <a class="fancybox" href="1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="1_s.jpg" alt="" /></a> -->
+
+	
+	<!-- <a class="fancybox-effects-a" href="5_b.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"><img src="5_s.jpg" alt="" /></a> -->
+
+    <style type="text/css">
+
+.style1 {
+	font-weight: bold;
+	font-size: x-large;
+}
+body {
+	background-color: #0066FF;
+}
+
+    </style>
+</head>
+
+<body>
+&nbsp;
+<div class="enust">
+	
+	<div class="ortala">
+	
+	</div>
+</div>
+
+
+<div class="enust-alt">
+	
+	<div class="ortala">
+		
+		<div class="menu"> <a href="index.html" class="anasayfa">
+		</a>
+			<span class="menu_home_line"></span>
+			<ul>
+				<li> <a href="index.html">ANASAYFA&nbsp;</a></li>
+				<li><a href="nazımhikmet.html">NAZIM HİKMET&nbsp;</a></li>
+				<li><a href="cemalsüreya.html">CEMAL SÜREYYA&nbsp;</a></li>
+				<li><a href="edipcansever.html">EDİP CANSEVER</a></li>
+				<li><a href="orhanveli.html">ORHAN VELİ KANIK</a></li>
+				<li><a href="said.html">SAİD ÖZEL</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="style1">
+<div class="orta">
+  <div align="center">
+   
+    
+  </div>
+</div>
+<p align="center">&nbsp; </p>
+<p align="center">&nbsp;</p>
+<div>
+  <div align="center"></div>
+  <h1 align="center">11 temmuz 2001 tarihinde doğdum. Doğar doğmaz sarılık geçirip uzun bir süre küvezde yaşamımı sürdürdüm. Tedaviler olumlu sonuç verince küvezden çıkarılıp normal bir yaşama geri döndüm. İlkokuldan liseye kadar Mehmet emin şimşek'te okudum. Zamanımın çoğunu Tıp ve alternatif tıp kitaplarını ezberleyip , öğrenmekle ve bilgisayarda donanım , yazılım ve oyun konusunda harcıyordum. Lisede dersler pek ilgi çekici gelmediğinden kendi eğitimimi kendim oluşturdum b2 seviyesinde ingilizce öğrendim. Boş zamanlarımı kurs eğitim ve sporla geçirdim. Uzun eğitim ve antremanlarım sonrasında şuan Teakwondo'da 1.kademe antrenör , MMA (Karma dövüş sanatları) ve vucüt geliştirme sporcusuyum. Türkiye izci federasyonuna bağlı Türkiye geneli İzci lideriyim. Aynı zamanda profesyonel fotoğrafçılık eğitimimi tamamladım. Lise yıllarında edebiyatı magazinsel bir şekilde takip edip ilgimi ve sanatımı edebiyata özellikle Eski Türk Edebiyatına vermeye başladım. Edebiyat hocamın derste oluşturduğum cümleleri ve tesadüfen keyfi yazdığım yazıları görmesinden sonra bana destek çıkıp makale ve şiir gibi yazılar yazdırdı. Edebiyata olan ilgim , yeteneğim ve bilgilerim sayesinde ilk aşk şiirimi van gazetesinde yayımlandı. Alternatif tıp , İnsanlar üzerine psikosyal notlar ve hiciv dolu şiir kitaplarımı yayımlanma sıkıntıları yüzünden sinirlenince bir kısmını yakıp sonrasında pişman olup şuan hala yazmaya devam etmekteyim. Kötü geçen derslerim yüzünden ve fen bilimleri , matematik derslerinde çok ilgisiz olduğum için üniversite sınavı konusunda zorlandım. Fakat bilgisayara yeteneğim ve merakım olduğu için 2019 da Mersin üniversitesi Bilgisayar programcılığını ilk tercih olarak kazandım. Edebiyat ve bilim sever bir insan olarak hayattaki amacım kendimi durmaksızın geliştirip hayatın tadını huzurlu bir şekilde çıkarıp çokça üretmek. </h1>
+  <p align="center">&nbsp;</p>
+</div>
+</div>
+<img src="said1.jpeg" alt=""/>
+</div>
+</div>
+<img src="said2.jpeg" alt=""/>
+</div>
+</div>
+<img src="said3.jpeg" alt=""/>
+</div>
+</div>
+<img src="said4.jpeg" alt=""/>
+</div>
+</div>
+<img src="said5.jpeg" alt=""/>
+</div>
+</div>
+<img src="said6.jpeg" alt=""/>
+</div>
+</div>
+<img src="said7.jpeg" alt=""/>
+</div>
+</div>
+<img src="said8.jpeg" alt=""/>
+
+
+</body>
+</html>

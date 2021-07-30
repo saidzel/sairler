@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Şairler</title>
+	<meta name="keywords" content="../">
+	<meta name="description" content="../">
+	<meta name="author" content="Adem Coşkun">
+	<meta name="classification" content="web tasarım">
+	<meta name="googlebot" content="All, Index, Follow" />
+	<meta name="Robots" content="All, Index, Follow" />
+	<meta name="revisit-after" content="7 days">
+	<meta name="rating" content="General" />
+	<meta name="expires" content="no" />
+	<meta name="language" content="turkish, TR" />
+	<meta name="distribution" content="Global" />
+	<meta name="googlebot" content="NOODP" />
+	<meta name="robots" content="all" />
+	<meta name="robots" content="follow" />
+	<meta name="robots" content="index" />
+	<meta name="distribution" content="global" />
+	<meta name="revisit-after" content="1 Day" />
+	<meta http-equiv="Copyright" content="Copyright © webturkuaz.com">
+
+	
+	<link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="assets/styles/custom.css" type="text/css" />
+	<link rel="stylesheet" href="assets/font/font.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/styles/font-awesome.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/mobile/media-queries.css" type="text/css" />
+
+	
+	<link rel="Shortcut Icon" href="assets/images/icons/fav_icon.png" type="image/x-icon">
+    
+   
+	<script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/custom.js"></script>
+
+
+   
+	<script type="text/javascript" src="assets/scripts/jquery-1.10.1.min.js"></script>
+
+	
+	<script type="text/javascript" src="assets/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	
+	<script type="text/javascript" src="assets/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="assets/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$('.fancybox').fancybox();
+
+			
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+		
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+	
+	<!-- <a class="fancybox" href="1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="1_s.jpg" alt="" /></a> -->
+
+	
+	<!-- <a class="fancybox-effects-a" href="5_b.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"><img src="5_s.jpg" alt="" /></a> -->
+
+    <style type="text/css">
+<!--
+.style1 {
+	font-weight: bold;
+	font-size: x-large;
+}
+body {
+	background-color: #00FFCC;
+}
+-->
+    </style>
+</head>
+
+<body>
+&nbsp;
+<div class="enust">
+
+	<div class="ortala">
+		
+	</div>
+</div>
+
+
+<div class="enust-alt">
+	
+	<div class="ortala">
+		
+		<div class="menu"> <a href="index.html" class="anasayfa">
+		</a>
+			<span class="menu_home_line"></span>
+			<ul>
+				<li> <a href="index.html">ANASAYFA&nbsp;</a></li>
+				<li><a href="nazımhikmet.html">NAZIM HİKMET&nbsp;</a></li>
+				<li><a href="cemalsüreya.html">CEMAL SÜREYYA&nbsp;</a></li>
+				<li><a href="edipcansever.html">EDİP CANSEVER</a></li>
+				<li><a href="orhanveli.html">ORHAN VELİ KANIK</a></li>
+				<li><a href="said.html">SAİD ÖZEL</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="style1">
+<div class="orta">
+  <div align="center">
+   
+  </div>
+</div>
+<div>
+  <div align="center"><img src="https://icdn.ensonhaber.com/crop/320x241-85/resimler/diger//kok/2020/05/28/edip-cansever_7945.jpg" alt="Edip Cansever kimdir">  </div>
+  <h1 align="center">Edip Cansever kimdir</h1>
+</div>
+<p align="center">Şiiri yazmakla yetinmeyip yaşamayı tercih eden, madalyonun hangi yüzünü çevirse kuzeyini şiir olarak bellemiş şair, Edip Cansever’in hayat hikayesidir...</p>
+<div></div>
+<p align="center">Bugün Edip Cansever’in ölüm yıl dönümü; şairlikten başka hiçbir iş bilmeyen o güzel adamın. Hangi ismin biyografisini yazsam onun tesirinde bütün günüm. Bugün de payıma o ve onun güzel şiirleri düştü.</p>
+<p align="center">Onun mutlu olmak için sadece şiire ihtiyacı vardı. Bu mutluluğun en fazla bir gün süreceğinin gerçeğini savunuyordu üstelik. Kim bilir, Edip Cansever’in de dediği gibi, belki hakkımız olan mutluluk limiti bu kadarcıktı. Öyleyse değmez miydi? İnsan kendisini mutlu eden şey neyse onun peşinden gitmeli. Gidebilsin ki, dünyanın döndüğünü kalbinde hissedebilsin; basit bir baş dönmesi gibi akıp gitmesin zaman…</p>
+<p align="center">Yaşamak için her şiirden, her şarkıdan, bizi<em> “biz” </em>hissettiren her olgudan öğrenecek ne çok şeyimiz var ve insan bunu her seferinde bir kez daha, bıkmadan, usanmadan fark ediyormuş meğer…</p>
+<p align="center">Ve iyi ki…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_8922.jpg" alt="" width="500" height="564" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_8922.jpg"></p>
+<h4 align="center">Çocukluğu ve eğitim hayatı</h4>
+<p align="center">Edip, 8 Ağustos 1928’de, İstanbul Beyazıt’ta Soğanağa Mahallesi’nde Pembe Hanım ve Fazlı Bey’in oğlu olarak dünyaya geldi. Babası ve annesi, Çankırı’nın Atkaracalar İlçesindendiler. Fazlı Bey, askerliğini İstanbul’da yapmış ve burada ticareti de keşfetmişti. Yavaş yavaş başladığı ticaret, Kapalıçarşı, Uzunköprü, Keşan ve başka birçok yerde panayır ve sergilerde alım satım yaptı. Sonunda kendi dükkanını açarak ailesini geçindirdi.</p>
+<p align="center">Edip doğduktan sonra aile, Haseki’de bir eve taşındı. Bir türlü sevemediği çocukluk zamanlarını, bu mahalleyi, evlerinde olanları, gün gelip de şu günler geçmiş olduğunda her şeyi, <em>“Ben Ruhi Bey, Nasılım” </em>adını verdiği şiir kitabında anlatacaktı. Ama daha vardı o günlerin gelmesine. Önce sevemediği şu yerde çelimsiz bir çocuk olarak günlerini doldurmalıydı…</p>
+<p align="center">Açık kumral saçları, kaburgalarının sayıldığı cılız bedeniyle küçücük bir çocuktu Edip ve gelecekte bir şair olacağı gerçeğine bakılırsa bulunduğu ev bakımından şanssızdı. Çünkü onların evinde uçaklar hakkında bir resimli kitap dışında hiç kitap yoktu. İçindeki bu tılsımı kendisinin keşfetmesi gerekecekti.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_3020.jpg" alt="" width="500" height="668" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_3020.jpg"></p>
+<p align="center"><em>(Ayten, Edip, Edibe, Perihan)</em></p>
+<p align="center">II. Dünya Savaşı’nın başladığı dönemde, annesi, babası ve üç kız kardeşiyle Fatih’te bir apartmana taşındılar. Okula başladığı yıllardı ve Edip, artık okumayı biliyordu; okumanın lezzetini de. Semtindeki Millet Kütüphanesi’ne giderek eski <em>“Sanat” d</em>ergisi ciltlerini okurdu. Bir şeyler okumanın içine bıraktığı ferahlık paha biçilemezdi.</p>
+<p align="center">Sevemediği çocukluğunun içinde sevdiği şeyler de vardı elbette. Erik ağaçlarından çaldığı lezzetini başka yerde bulamayacağı erikleri seviyordu mesela. Şehzade Camii’nin içinde bisiklet kiraladıkları zaman dilimlerini, sıcak yaz günlerinde arsalarda gösterilerini izlediği cambazları, itfaiye binasındaki müzeyi; ama en çok yağmurlu havalarda sinema kapılarında bilet almayı severdi.</p>
+<p align="center">Kumkapı Ortaokulu ve İstanbul Erkek Lisesi’ni bitirdi. Daha sonra yükseköğrenim için Yüksek Ticaret Okulu’na da girdi, ancak devam etmedi.</p>
+<p align="center">Neyse ki kendini çabuk tanımıştı ve her şeyi hızlı öğreniyordu. İlk şiirlerini yazmaya başladığında ortaokulun ikinci sınıfındaydı. Edip, neleri sevdiğini erken keşfetmişti. Bir çocuk dergisinde bile yayımlandı ilk şiiri…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_5758.jpg" alt="" width="600" height="407" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_5758.jpg"></p>
+<h4 align="center">Erken başlayan iş hayatı</h4>
+<p align="center">Edip, eğitim hayatını tamamlamadan iş hayatına atıldı. Hayat, onun için erken başlamıştı. 1950’de İstanbul Kapalıçarşı’da ticaret ile başladı çalışmaya. Baba mesleği, bir anda onun da ekmek kapısı oluvermişti. Elbette bir yandan da şiir vardı; ondan hayatı boyunca hiç vazgeçmeyecekti.</p>
+<p align="center">Ancak erken atıldığı bu iş hayatı, daha başka şeyleri de hayatına erkenden getirecekti; çok değil, 1-2 yılı vardı…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_1778.jpeg" alt="" width="600" height="404" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_1778.jpeg"></p>
+<h4 align="center">Şiirle ilk dansı</h4>
+<p align="center">Edip’in şu hayatta en çok değer verdiği şey yazdığı ve hatta yazmadığı, yazma ihtimali bulunan şiirlerdi. En çok bu konuda çalışıyordu ve istekliydi.</p>
+<p align="center">İlk olarak yazığı şiirleri, 1944’te, gencecik bir delikanlıyken <em>“İstanbul” </em>adlı bir dergide yayımladı. Başka dergilerde de şiirlerini yayımlamaya devam etti.</p>
+<p align="center">17-18 yaşlarındaydı. Ahmet Hamdi Tanpınar, komşuları Nigar Hanım’ın kardeşiydi ve Edip, ilk şiirlerini ona gösterdi. Tanpınar’ın yorumu, <em>“Bu şiirler çok güzel, hepsi de güzel; ama hiçbiri şiir değil” </em>oldu ve karşısında bu işe gönül verdiğini hissettiren Edip’e uzun uzun resme nasıl bakması gerektiğini anlattı. Hemen eve döndü. Elinde bir sürü resimle gelmişti. Öğrendiklerini uygulama zamanıydı. Uzun uzun bakmalardan sonra, sonradan yayımladığında pişman olacağı, <em>“İkindi Üstü”</em> şiirini yazdı.</p>
+<p align="center">Yazacağı şiirlerin daha ilk adımlarıydı bunlar…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_6181.jpg" alt="" width="500" height="796" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_6181.jpg"></p>
+<p align="center"><em>(Mefharet Hanım ve Edip Cansever)</em></p>
+<h4 align="center">Edip Cansever evlendi</h4>
+<p align="center">Hayatında erken başlayan şeylerden biri de evlilikti. 19’unda evliydi Edip; 20’sinde de baba olmuş gencecik bir adamdı. Mefharet ve Edip, kızlarına Nuran adını verdiler.</p>
+<p align="center">Hem ev geçindirmek zorundaydı; bir yandan da şiire tutkunluğu ömürlüktü. 1954’te bir yangında her şey kül olana kadar babadan kalma küçük dükkanda halı ticareti yaptı. Bir yandan ticareti, “Yıllar önce insanların güzel diye yaptıklarını, o güzellik karşısında şaşıran, gülen, sevinen insanlara satıyorum” diye tanımlıyor bir yandan da hiç sevmiyordu. Kapalıçarşı’yı, sınıf ayrımının en somut gözlemlendiği yer olarak görüyor, orada her şeye sadece para değeri için bakılacağını anlatıyordu. En az çocukluk zamanları kadar mutsuzdu bu işten. Neyse ki şiir vardı; onu özgürleştiriyordu…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_3031.jpg" alt="" width="600" height="408" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_3031.jpg"></p>
+<h4 align="center">Tek mutluluk şiir yazmak</h4>
+<p align="center">Edip, 1951’de arkadaşlarıyla birlikte <em>“Nokta”</em> adını verdikleri bir dergi çıkardı. 1950’lerde şiirlerini farklı bir tarzda kaleme aldı. İlk kitabından itibaren ilgi çekmişti; ancak daha sonra da yarattığı farklılık, edebiyat çevrelerince fark edilmeye başlandı. Şiire, tüm gelenekleri yerle bir eden bir akım, yeni bir soluk getiriyordu Edip Cansever. Hep şiir yazdı; ama bu fark edilme sürecinde şiir hakkında düşüncelerini açıkladığı düzyazılar da yazdı.</p>
+<p align="center">Onu şiire yaklaştıran olay kuşkusuz 1954’te meydana gelen Büyük Kapalıçarşı Yangınıydı. Bu yangında dükkanı tamamen yandı. Sigortadan aldığı para da yeni bir dükkan açmaya yetmeyecek kadar azdı; kendine bir ortak buldu. Birkaç ay sonra ortağı Edip’e asma katta istediği kadar çalışabileceğini, kendisinin de alım satım işleriyle ilgilenebileceğini söyledi. Bu, Edip’in hayatındaki en güzel müjdelerden biriydi. Dokuz kitabını Kapalıçarşı’da, bu küçük dükkanın asma katında kendine kurduğu yaşam alanında yazdı. Çalışma alanı denmemeliydi, çünkü burası, onun nefes aldığı, mutluluğu duyumsadığı yerdi. Yıllar sonra bugünleri düşündüğünde hep şöyle iç geçirdi: <em>“Ya o yangın olmasaydı…”</em></p>
+<p align="center">Çünkü Edip Cansever için tek mutluluk, şiir yazmaktı. Biliyordu, bir şiirin verdiği mutluluk, ömürlük olmayacaktı. Olsa olsa bir gün sürerdi. Olsundu;<em> “Belki de bütün mutlulukların toplamı bu kadarcıktır”</em> diyordu kendi kendine…</p>
+<p align="center">Edip Cansever, sadece şiir yazan bir şairdi. Şiir yazmadığı zamanlar, zaten onun mutsuzluk zamanlarıydı.  Şiir dışında hiçbir şey yazmamış, hatta başka hiçbir şey yapmamıştı. Neredeyse okumaktan başka olumlu hiçbir şey yapmıyordu; yapamazdı. Çocukluğundaki o uçakların resimlerinin olduğu tek kitabı saymazsak, kaçırdığı ne çok kitap olmuştu. Açığı kapatmalıydı belki de…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_1296.jpg" alt="" width="600" height="387" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_1296.jpg"></p>
+<p align="center"><em>(Tomris Uyar)</em></p>
+<p align="center">Tomris Uyar'a hayranlığı</p>
+<p align="center">Edebiyat dünyasının bilinen gerçeklerindendi Edip Cansever'in Tomris Uyar'a hayranlığı. İnce bir çizgide yürüdü bu duygusu için. İnce ve istikrarlı. Öyle ki, Edip, her 15 Mart'ta Tomris Uyar'ın yeni yaşı için bir şiir yazdı, yayımladı; hayranlığını bıkmadan usanmadan dile getirdi.</p>
+<p align="center">Onlardan bir tanesinde şöyle diyordu, bir kuplecik bırakıyorum:</p>
+<p align="center">Şu dizeleri yazmıştır onun için;</p>
+<p align="center"><em>"Ben seni uzun bir yolda yürürken görmedim ki hiç</em></p>
+<p align="center"><em>Yağmurlar altında gördüm, kadeh tutarken gördüm de</em></p>
+<p align="center"><em>Bir kıyıya bakarken, bakarkenki ağlayan yüzünle</em></p>
+<p align="center"><em>Ve yarışırsa ancak Monet'nin</em></p>
+<p align="center"><em>Kadınlarına yaraşan giysilerinle</em></p>
+<p align="center"><em>Gördüm de</em></p>
+<p align="center"><em>Ben seni uzun bir yolda yürürken görmedim ki hiç.</em></p>
+<p align="center"><em>..."</em></p>
+<p align="center">Tomris Uyar ise, onun bu hayranlık dolu dizeleri karşısında şöyle demişti:</p>
+<p align="center"><em>''Sevgililik ya da aşk duygusu zamanla yara alabiliyor, örselenebiliyor, bitebiliyor. Bitmeyen tek aşkın gerçek ve lirik bir dostluk olduğunu Edip Cansever öğretti bana".</em></p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_3467.jpg" alt="" width="600" height="300" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_3467.jpg"></p>
+<h4 align="center">Edebi yönü</h4>
+<p align="center">Edip Cansever, II. Yeni Hareketi içinde yer alıyordu; hatta en önemli isimlerindendi. Şiirlerinde kapalı diye tabir edilen bir anlayışı benimsemişti. Şiiri için bir kişi seçer, onun üzerinden soyut ve somut arasında ani geçişli bir dansa soyunurdu. Hiç dans etti mi ya da sever miydi bilmiyorum; ama onu nedense böyle hayal ediyorum…</p>
+<p align="center">Şiirdeki tüm kalıpları yıkmış, ele avuca sığmadan yazıyordu. Mesela “Masa Da Masaymış Ha” çok güzel bir örnek. Masa gibi somut bir nesne üzerinden birçok fikri kapalı, bir yanda da apaçık bir şekilde kaleme aldı. Öyle ki bu şiirle, Edip Cansever’in yaşamdan anladığını, dünya görüşünü kavramak hiç de zor değildi. Çünkü insanlar ve nesneler arasında derin bir bağ vardı. Onun şiirlerini okurken bir tiyatro izliyormuş hissine de kapılmanız, belki bu sebeptendi. Tabii tiyatro diyaloglarını, özellikle de Klasik Yunan üslubu tiyatro diyaloglarının varlığı dışında.</p>
+<p align="center">O, şiiri yazmıyor, aslında yaşıyordu…</p>
+<p align="center">Masa Da Masaymış Ha</p>
+<p align="center"><em>Adam yaşama sevinci içinde</em></p>
+<p align="center"><em><em>Masaya anahtarlarını koydu.</em></em></p>
+<p align="center"><em><em>Bakır kaseye çiçekleri koydu.</em></em></p>
+<p align="center"><em><em>Sütünü, yumurtasını koydu.</em></em></p>
+<p align="center"><em><em>Pencereden gelen ışığı koydu.</em></em></p>
+<p align="center"><em><em>Bisiklet sesini, çıkrık sesini,</em></em></p>
+<p align="center"><em><em>Ekmeğin havanın yumuşaklığını koydu.</em></em></p>
+<p align="center"><em><em>Adam masaya,</em></em></p>
+<p align="center"><em><em>Aklında olup bitenleri koydu.</em></em></p>
+<p align="center"><em><em>Ne yapmak istiyordu hayatta,</em></em></p>
+<p align="center"><em><em>İşte onu koydu.</em></em></p>
+<p align="center"><em><em>Kimi seviyordu, kimi sevmiyordu,</em></em></p>
+<p align="center"><em><em>Adam masaya onları da koydu.</em></em></p>
+<p align="center"><em><em>Üç kere üç dokuz ederdi;</em></em></p>
+<p align="center"><em><em>Adam koydu masaya dokuzu.</em></em></p>
+<p align="center"><em><em>Pencere yanındaydı, gökyüzü yanında</em></em></p>
+<p align="center"><em><em>Uzandı masaya sonsuzu koydu.</em></em></p>
+<p align="center"><em><em>Bir bira içmek istiyordu kaç gündür</em></em></p>
+<p align="center"><em><em>Masaya biranın dökülüşünü koydu.</em></em></p>
+<p align="center"><em><em>Uykusunu koydu, uyanıklığını koydu.</em></em></p>
+<p align="center"><em><em>Tokluğunu, açlığını koydu.</em></em></p>
+<p align="center"><em><em>Masa da masaymış ha!</em></em></p>
+<p align="center"><em><em>Bana mısın demedi bu kadar yüke!</em></em></p>
+<p align="center"><em><em>Bir iki sallandı durdu,</em></em></p>
+<p align="center"><em><em>Adam ha babam koyuyordu…</em></em></p>
+<h4 align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_5577.jpg" alt="" width="600" height="387" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_5577.jpg"><br>
+</h4>
+<h4 align="center">Kitapları ve ödülleri</h4>
+<p align="center">1957’de<em> “Yerçekimli Laranfil” </em>adını verdiği kitabını yayımladı Edip Cansever. Bu kitaptaki şiirler çok ilgi görmüştü. Öyle ki, ona, 1958’de<em> “Yeditepe Şiir Armağanı”</em>nı kazandırdı. II. Yeni’nin neredeyse tüm özellikleri bu kitapta vardı. Artık Türk Şiiri yeni bir boyut kazanmıştı.</p>
+<p align="center">1964’te Mehmet Fuat’ın yönettiği <em>“Yeni Dergi”</em>nin yayın hayatına girdi. Fuat, bu dergide özellikle II. Yenicileri toplamıştı. Edip Cansever, bu dergiye en sadık olan isimlerden biriydi; söz konusu şiir olduğunda hep olduğu gibi. Dergi, 1975’te kapandığından Edip Cansever şiirleri, 1978 – 1980 yılları arasında çıkan, Enis Batur’un yönettiği<em> “Yazı”</em> dergisinde yer alacaktı. 1979’da Doğan Hızlan’ın yönettiği<em> “Hürriyet Gösteri”</em> ve 1981’de yayımlanmaya başlayan <em>“Adam Sanat”</em>ın ilk sayısı da alacaktı bu özel şiirlerden nasibini…</p>
+<p align="center">1966 – 1970 yılları arasında da Cemal Süreya’nın<em> Papirüs</em> dergisinde yayımladı şiirlerini. Onun için önemli olan şiirlerini yazıyor ve yayımlıyor olmaktı. Ancak sevdiği insanlarla, şiir gibi özel bir nokta da buluşuyor olmak da ayrı bir keyifti.</p>
+<p align="center">1976’ya kadar Kapalıçarşı’daki turistik eşya ve halı ticareti yaptığı dükkanla olan bağını tamamen kopardı ve artık sadece şiir vardı. Bu yıl, kendisi için de Türk Edebiyatı için de bambaşka bir noktada duran kitabını yayımladı: <em>“Ben Ruhi Bey, Nasılım”</em>. O da hak ettiği somut değeri bir yıl içinde buldu; 1977’de <em>TDK Şiir Ödülü’</em>nü aldı.</p>
+<p align="center">Son olarak <em>“Yeniden”</em> adını verdiği kitapla tüm şiirlerini bir araya getirdi. Bu kez de 1982’de<em> “Sedat Simavi Edebiyat Ödülü”</em>ne layık görüldü.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/edip-cansever_5487.jpg" alt="" width="600" height="421" src="https://icdn.ensonhaber.com/resimler/diger/edip-cansever_5487.jpg"></p>
+<h4 align="center">Edip Cansever öldü</h4>
+<p align="center">Edip Cansever neredeyse şiir orada, şiire meze olacak malzemeler neredeyse Edip Cansever de oradaydı. Artık kışları İstanbul’da, yazları da Bodrum’da yaşamaya karar verdi. Bir Edebiyatçı standartlara göre bu şekilde yaşamalıydı galiba.</p>
+<p align="center">1986’da İlhan Berk’in de yardımıyla küçük bir ev aldı ve Mayıs ayında eşiyle birlikte Bodrum’a gittiler. Burada beyin kanaması geçirdiği teşhis edilince apar topar İstanbul’a tedaviye getirildi. Ancak çok geçti. Usta Şair, 28 Mayıs’ta hayata veda etti.</p>
+<p align="center">Acaba şiirlerine de etti mi diye merak etmeden duramıyor insan… Yani hani annelerin çocuklarını ölse de bırakmadığı inancı vardır ya, sanki Edip Cansever de şiirlerine aynı duyguyla bağlıydı hissiyatındayım şu an.</p>
+<p align="center">Öyle ya Cemal Süreya da bir şiirinde şöyle demez mi ardından:<br>
+    <em>“Yeşil ipek gömleğinin yakası</em><br>
+  <em>Büyük zamana düşer.</em></p>
+<p align="center"><em>Her şeyin fazlası zararlıdır ya,</em><br>
+    <em>Fazla şiirden öldü Edip Cansever”.</em></p>
+<p align="center">Belki de bu mümkündür; fazla şiirden ölmüştür, kim bilir. Şiire bağlılığı ile anılan, hayatı yaşama rehberi olarak şiiri kullanan ve bunu sıradan bir eylemmişçesine tüm doğallığıyla yapan bir Edip Cansever geçti bu dünyadan…</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="fft16_mf12091043.jpg" width="430" height="600" alt=""/>&nbsp;</p>
+</div>
+
+
+
+</body>
+</html>

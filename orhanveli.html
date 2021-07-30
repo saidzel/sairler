@@ -1,0 +1,419 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Şairler</title>
+	<meta name="keywords" content="../">
+	<meta name="description" content="../">
+	<meta name="author" content="Adem Coşkun">
+	<meta name="classification" content="web tasarım">
+	<meta name="googlebot" content="All, Index, Follow" />
+	<meta name="Robots" content="All, Index, Follow" />
+	<meta name="revisit-after" content="7 days">
+	<meta name="rating" content="General" />
+	<meta name="expires" content="no" />
+	<meta name="language" content="turkish, TR" />
+	<meta name="distribution" content="Global" />
+	<meta name="googlebot" content="NOODP" />
+	<meta name="robots" content="all" />
+	<meta name="robots" content="follow" />
+	<meta name="robots" content="index" />
+	<meta name="distribution" content="global" />
+	<meta name="revisit-after" content="1 Day" />
+	<meta http-equiv="Copyright" content="Copyright © webturkuaz.com">
+
+	
+	<link rel="stylesheet" href="assets/styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="assets/styles/custom.css" type="text/css" />
+	<link rel="stylesheet" href="assets/font/font.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/styles/font-awesome.css" type="text/css" />
+
+	
+	<link rel="stylesheet" href="assets/mobile/media-queries.css" type="text/css" />
+
+	
+	<link rel="Shortcut Icon" href="assets/images/icons/fav_icon.png" type="image/x-icon">
+    
+   
+	<script type="text/javascript" src="assets/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/custom.js"></script>
+
+
+    
+	<script type="text/javascript" src="assets/scripts/jquery-1.10.1.min.js"></script>
+
+	
+	<script type="text/javascript" src="assets/scripts/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	
+	<script type="text/javascript" src="assets/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="assets/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	
+	<link rel="stylesheet" type="text/css" href="assets/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	
+	<script type="text/javascript" src="assets/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+
+			$('.fancybox').fancybox();
+
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.jpg');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+	
+	<!-- <a class="fancybox" href="1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="1_s.jpg" alt="" /></a> -->
+
+	
+	<!-- <a class="fancybox-effects-a" href="5_b.jpg" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit"><img src="5_s.jpg" alt="" /></a> -->
+
+    <style type="text/css">
+
+.style1 {
+	font-weight: bold;
+	font-size: x-large;
+}
+body {
+	background-color: #00FFFF;
+}
+-->
+    </style>
+</head>
+
+<body>
+&nbsp;
+<div class="enust">
+	
+	<div class="ortala">
+	
+	</div>
+</div>
+
+
+<div class="enust-alt">
+	
+	<div class="ortala">
+		
+		<div class="menu"> <a href="index.html" class="anasayfa">
+		</a>
+			<span class="menu_home_line"></span>
+			<ul>
+				<li> <a href="index.html">ANASAYFA&nbsp;</a></li>
+				<li><a href="nazımhikmet.html">NAZIM HİKMET&nbsp;</a></li>
+				<li><a href="cemalsüreya.html">CEMAL SÜREYYA&nbsp;</a></li>
+				<li><a href="edipcansever.html">EDİP CANSEVER</a></li>
+				<li><a href="orhanveli.html">ORHAN VELİ KANIK</a></li>
+				<li><a href="said.html">SAİD ÖZEL</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="style1">
+<div class="orta">
+  <div align="center">
+   
+ 
+  </div>
+</div>
+<p align="center">&nbsp; </p>
+<p align="center">&nbsp;</p>
+<div>
+  <div align="center"><img src="https://icdn.ensonhaber.com/crop/320x241-85/resimler/diger/orhan-veli_5594.jpg" alt="Orhan Veli kimdir">  </div>
+  <h1 align="center">Orhan Veli kimdir</h1>
+</div>
+<p align="center">Hayatından şiirler yazmak yerine, şiiri yaşamayı tercih eden güzel adam, Orhan Veli’nin hayat hikayesidir.</p>
+<div></div>
+<p align="center">36 yıllık kısacık hayatına ne çok şiir sığdırdı. Naif mizacı ve iyilik dolu kalbi, tüm beynini ele geçiren şiirlerin cümlesi oluvermişti. Sokaktaki adamın sesi, söyleyemediği cümleleriydi şiirleri. Tüm aşklarını doldurduğu heybesinde şiirlerle geçen bir ömür, onu çukura çekse de, o, son vedasını yine bir şiirle yapacaktı…</p>
+<p align="center">"Aşkın Resmi Geçidi</p>
+<p align="center">…</p>
+<p align="center">Gelelim sonuncuya.<br>
+  Hiçbirine bağlanmadım<br>
+  Ona bağlandığım kadar.<br>
+  Sade kadın değil, insan.<br>
+  Ne kibarlık budalası,<br>
+  Ne malda mülkte gözü var.<br>
+  Hür olsak der,<br>
+  Eşit olsak der.<br>
+  İnsanları sevmesini bilir<br>
+  Yaşamayı sevdiği kadar".</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_6092.jpg" alt="" width="600" height="373" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_6092.jpg"></p>
+<h4 align="center">Çocukluğu</h4>
+<p align="center">Orhan, 13 Nisan 1914’te, Beykoz’a bağlı Yalıköyü’ndeki İshak Ağa Yokuşu'ndaki Çayır Sokak 9 numaralı konakta, İzmirli tüccar Fehmi Bey’in oğlu Mehmet Veli ve Beykozlu Hacı Ahmet Bey’in kızı Fatma Nigar Hanım’ın oğlu olarak dünyaya geldiğinde ailesi ona,<em> “Ahmet Orhan” </em>adını verdi. Kanundan sonra ise, aile “Kanık” soyadını aldı. Ancak Soyadı Kanunu’ndan önce, babasının adındaki Veli’yi sahiplenecek ve zamanla <em>Orhan Veli </em>olarak tanınacaktı.</p>
+<p align="center">Orhan’ın 3 kardeşi oldu. O, Adnan Veli, Füruzan ve Ayşe Zerrin’in abisiydi. Ancak Ankara’da bulundukları sırada dünyaya gelen Ayşe Zerrin, 1 yaşını dolduramadan kapatacaktı hayata gözlerini…</p>
+<p align="center">Orhan, naif bir çocuktu. Belki edebiyata düşkünlüğü de bu naiflikten kaynaklı olacaktı. Büyürken başına talihsiz kazalar, hastalıklar da geldi. Yanma tehlikesiyle burun buruna geldiğinde henüz 5 yaşında küçücük bir çocuktu örneğin; uzun süre tedavi gördü. 9 yaşında kızamık, 17 yaşında da kızıl hastalığına tutulacaktı…</p>
+<p align="center">Herkesle iyi geçinen, her güzelliğe kalbini açan bir Orhan Veli vardı. Çocuk yaşları için büyük olgunluk anlamına gelen bu özellik, ileride bir güzel edebiyat adamı olmasına vesile olacaktı.</p>
+<p align="center">Yıllar sonra bir gün kardeşi Adnan Veli, abisini kişisel yönden şöyle tanımlayacaktı: "Vücudu oldukça kemikli, kollarıyla bacakları epey uzundu. Göğsünü öne doğru eğerek hafifçe yaylanarak yürürdü. Elleri gayet ince, beyazdı. Parmakları adam akıllı uzun, tırnakları pembe, uzun ve yuvarlaktı. Geniş bir alnı, sivri bir çenesi vardı. Dudakları enikonu etliydi. Burnu tümsekliydi. Yüzü gençlikte çıkardığı ergenlik sivilceleri sebebiyle pürtüklüydü”.</p>
+<p align="center">Mehmet Veli Bey, Fatma Nigar Hanım ile evlendiği sırada, Mızıka-yı Hümayun’da klarnist idi. Cumhuriyet’in ilanından sonra ise, Cumhurbaşkanlığı Senfoni Orkestrası’nın şefi oldu. Aynı zamanda Musiki Muallim Mektebi’nde (Ankara Konservatuarı) Armoni Profesörü idi. Mehmet Veli Bey’in görevleri dolayısıyla, Orhan, 1923 – 1948 yılları arasında Ankara’da yaşadı. Gençliğe ilk adımını burada atacak, ilk aşkın sancısını, ilk gözyaşının tazeliğini burada tadacaktı. Bu süreçte bir dönem de Ankara Radyosu’nda müdür olarak görev alan Mehmet Veli Bey, daha sonraki yıllarda İstanbul Konservatuarı’nda İlmi Kurul Üyesi ve İstanbul Radyosu’nda Ses Uzmanı olarak bulunacaktı.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_3706.jpg" alt="" width="600" height="904" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_3706.jpg"></p>
+<h4 align="center">Eğitim hayatı</h4>
+<p align="center">Çocuk yaşları Beykoz, Beşiktaş ve Cihangir’de geçti Orhan’ın. Mütareke sırasında Akaretler’deki Anafartalar İlkokulu’nun ana sınıfına başladı. Birinci sınıfa başlaması gerektiğinde ise, bu okuldan alındı ve Galatasaray Lisesi’ne yatılı eğitime verildi.</p>
+<p align="center">Babası, Ankara’daki görevine başlayalı 2 yıl olmuştu. Orhan, annesiyle İstanbul’daydı; daha doğrusu yatılı okulda. Babası daha fazla ayrı kalmalarını istemedi ve Orhan’ın Galatasaray Lisesi’ndeki kaydı, dördüncü sınıfı tamamlamışken, alındı ve Orhan, annesiyle Ankara’ya taşınarak Gazi İlkokulu’na kaydoldu. Bir yıl sonra 1926’da da Ankara Erkek Lisesi’ne (Ankara Atatürk Lisesi) yatılı kaydoldu.</p>
+<p align="center">Orhan, 1932’de liseden mezun oldu ve İstanbul Üniversitesi Edebiyat Fakültesi, Felsefe Bölümü’ne kaydoldu. 1933’te Edebiyat Fakültesi Talebe Cemiyeti’ne başkan seçildi. 1935’e kadar devam ettiği okulu ise mezun olmadan bıraktı. Bir yandan da, Galatasaray Lisesi’nde öğretmen yardımcısı olarak çalışıyordu. Bu göreve 1 yıl daha devam etti.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_5207.jpg" alt="" width="600" height="336" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_5207.jpg"></p>
+<h4 align="center">Edebiyata merakı</h4>
+<p align="center">Orhan, edebiyatın büyüsünü keşfettiğinde henüz ilkokul sıralarındaydı. Küçük öyküler yazıyordu çocuk parmaklarıyla. Bir öyküsü, <em>“Çocuk Dünyası”</em> adlı dergide yayımlandığında da ilkokuldaydı.</p>
+<p align="center">Yedinci sınıftayken <em>Oktay Rıfat Horozcu </em>ile tanıştılar. Birkaç yıl sonra da Halkevi’nde düzenlenen bir müsamere sırasında <em>Melih Cevdet Anday</em> ile tanıştılar. Zamanla güzel bir üçlü oluşturacaklardı. Liseye başladığında ise, Edebiyat Öğretmeni, <em>Ahmet Hamdi Tanpınar</em>’dı. Tanpınar, Orhan’ın öğüt babası olmuştu. Onun yön bulmasında, özel bir isimdi.</p>
+<p align="center">Lise döneminde enfes dostları Melih Cevdet ve Oktay Rıfat ile bir dergi işine soyundular,<em> “Sesimiz” </em>adını verdikleri dergiyi çıkardılar. Orhan Veli, yaşamının bu genç çağlarında aruz vezni ile tanışmıştı. Kuralları kavramış, şiirlerini tam bir uyum içinde yazıyordu. Ellerinin, kalbinin ve de ruhunun şiire yatkınlığının keşfiydi bu süreç…</p>
+<p align="center">Edebiyatın yanında sanatın her kolu ilgisini çeker olmuştu aslında. Tiyatro çalışmalarına da katılmaya başladı. İlk rolünü, Raşit Rıza’nın oynadığı <em>“Aktör Kin”</em> oyununda aldı. Ahmet Vefik Paşa’nın Moliere’den uyarladığı, Ercüment Behzat Lav’ın sahnelediği,<em> “Zor Nikah”</em>ta, <em>“Üstat-ı Sanî"</em>yi; Maurice Maeterlinck’in Monna Vanna’sında<em> “baba”</em> rolünü üstlendikten sonra, Orhan Veli, tiyatroda alanındaki çalışmalarına çevirmen olarak devam etti. Pek çok oyun çevirecekti.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_7269.jpg" alt="" width="600" height="645" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_7269.jpg"></p>
+<h4 align="center">Varlık dergisi dönemi</h4>
+<p align="center">Orhan Veli, üniversiteyi yarıda bıraktıktan sonra Ankara’ya döndü. PTT Umum Müdürlüğü, Telgraf İşleri Reisliği, Milletlerarası Nizamlar bürosunda çalıştı.</p>
+<p align="center">Ankara’ya döner dönmez eski arkadaşlarıyla daha sıkı görüşmeye başladı. Giderek şiirleri birbirine benzemeye başlayana dek yazdılar da yazdılar. 1936’da, Nahid Sırrı Örik’in, Orhan Veli hakkında bulunduğu öneri üzerine, <em>“Oaristys, Ebabil, Eldorado, Düşüncelerimin Başucunda”</em> adını verdiği şiirleri,<em> “Varlık”</em> dergisinde yayımlandı.</p>
+<p align="center">Varlık, Orhan Veli ve arkadaşlarından şu cümlelerle bahsediyordu: <em>“Varlık'ın şiir kadrosu yeni ve kuvvetli genç imzalarla zenginleşmektedir. Aşağıda dört şiirini okuyacağınız Orhan Veli, şimdiye kadar yazılarını neşretmemiş olmasına rağmen olgun bir sanat sahibidir. Gelecek sayılarımızda onun ve arkadaşları Oktay Rifat, Melih Cevdet ve Mehmet Ali Sel'in şiirimize getirdikleri yeni havayı daha iyi belirtecektir”.</em></p>
+<p align="center">Orhan Veli, bazı şiirlerini yayımlarken <em>“Mehmet Ali Sel” </em>takma adını kullandı. Oktay Rıfat bu takma ad ile ilgili olarak şu açıklamayı yapmıştı: <em>“Galiba yırtmaya kıyamadığı şiirlerini bu adla çıkarırdı".</em> Kendisi ise, Baki Süha Ediboğlu’nun kendisine konu hakkında yönelttiği soruyu şöyle cevaplamıştı: <em>“O zamanlar çok şiir yayınlıyordum. Adımın her zaman görünmesi hem benim için hem de dergi için doğru değildi. Bir de şu var: Mehmet Ali Sel benim bazı tecrübelerime alet olmuş bir isimdir”.</em></p>
+<p align="center">Orhan Veli şiirleri, 1936 – 1942 yılları arasında Varlık’ta yayımlanmaya devam etti. Bunun yanında<em> “İnsan, Ses, Gençlik, Küllük, İnkılâpçı Gençlik” </em>dergilerinde de yayımlanıyordu.</p>
+<p align="center">Orhan Veli’nin şiirleri, şekil, yapı ve içerik itibarıyla hece ölçüsü olarak kabul ediliyordu. 1937’den sonra ise, Orhan Veli ve arkadaşları, benimseyecekleri yeni tarzla yazacaklardı…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_113.jpg" alt="" width="600" height="357" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_113.jpg"></p>
+<p align="center"><em>(Melih Cevdet - <a title="Orhan Veli" href="https://www.ensonhaber.com/orhan-veli.htm">Orhan Veli</a> - Oktay Rıfat)</em></p>
+<h4 align="center">Garip akımının ilk adımları</h4>
+<p align="center">Mayıs 1941’de, Orhan Veli’nin 24, Melih Cevdet’in 16, Oktay Rıfat’ın ise 21 şiirinin yer aldığı<em> “Garip”</em> seçkisi yayımlandı. Kitabın önsözü, en az şiirler kadar ses getirmişti ve o da Orhan Veli’ye aitti.</p>
+<p align="center">Bu kitap, <em>“Birinci Yeni”</em> olarak da anılacak<em> “Garip”</em> akımını başlatmış oldu. Bu üç kafadar, başlattıkları akımla, radikal bir tutum içine girmişlerdi. İlk iş hececilerin, özellikle Ahmet Haşim’in şiirlerini ve Nazım Hikmet’in toplumcu – gerçekçi şiirlerini reddettiler.</p>
+<p align="center">Orhan Veli, yeni bir zevk ortaya çıkarmanın peşinde, eski olan her şeyden uzak durmaya çalışıyordu. Hece ve aruz ölçülerini kullanmayı reddediyorlar; kafiyeyi ilkel; mecaz, teşbih, mübalağa gibi edebi sanatları da gereksiz buluyordu. Yalın bir anlatımı benimsemiş, şiirinin dilini, konuşma diline yakınlaştırma çabası içine girmişti. Orhan Veli, sokaktaki adamın söylemini şiirlerine taşıyarak, yeni bir tür gündeme getirmişti. Garip akımı, 1940-1950 yılları arasında Cumhuriyet Dönemi şiirinde önemli etkiler bırakacaktı. Garip şiiri, yapıcı ve yıkıcı her özelliğinin toplamında, Türk şiirinde özel bir yer edindi.</p>
+<p align="center">Orhan Veli, Garip akımını, sadece yazdıklarıyla değil, hayata karşı duruşuyla açıklıyordu. Fiziksel ve kişisel yönlerini de bu uğurda kullanmaktan çekinmiyordu. O şiirlerinde hayatından kesitler sunmuyordu aslında; hayatını şiirlerine göre yaşıyordu.</p>
+<p align="center">Bu süreçte şiirler ve önsöz, edebiyat dünyasında büyük tartışma yarattı. Özellikle Orhan Veli’nin kaleminden dökülmüş bir<em> “Yazık Oldu Süleyman Efendi”</em>ye vardı ki, hakkında ne çok yorum yapılıyordu. Kimileri tenkit ederken, kimileri çalıntı olduğunu iddia ediyordu. Bir başka taraf ise, Türkçenin eşsiz dizeleri olduğunu düşünüyordu. Bir şeyin hakkında bu kadar çok konuşulması, o şeyi ister istemez yüceltiyordu. Hakkında bunca şey konuşulan bu şiir, bir anda popüler oldu. Nurullah Ataç’ın deyimiyle “vapurlara, tramvaylara, kahvehanelere” kadar girdi…</p>
+<p align="center">O halde şiirden bir kuplecik bırakayım şuraya…</p>
+<p align="center"><em>"Ben Orhan Veli</em><br>
+    <em>"Yazık oldu Süleyman Efendiye"</em><br>
+  <em>Mısra-i meşhurunun mübdii..</em><br>
+  <em>Duydum ki merak ediyormuşsunuz,</em><br>
+  <em>Hususi hayatımı,</em><br>
+  <em>Anlatayım:</em><br>
+  <em>Evvela adamım, yani</em><br>
+  <em>Sirk hayvanı falan değilim.</em><br>
+  <em>Burnum var, kulağım var,</em><br>
+  <em>Pek biçimli olmamakla beraber.</em><br>
+  <em>Bir evde otururum,</em><br>
+  <em>Bir işte çalışırım.</em><br>
+  <em>Ne başımda bulut gezdiririm,</em><br>
+  <em>Ne sırtımda mühr-ü nübüvvet".</em></p>
+<p align="center">…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_2691.jpg" alt="" width="600" height="257" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_2691.jpg"></p>
+<h4 align="center">Rakı şişesinde balık olsam</h4>
+<p align="center"><em>“Yazık Oldu Süleyman Efendi”</em>nin ününü, Ahmet Haşim’in, <em>“Göllerde bu dem bir kamış olsam”</em> dizesini hicvetmek için yazdığı <em>“Rakı Şisesinde Balık Olsam”</em> izledi.</p>
+<p align="center">Orhan Veli, <em>“Eskiler Alıyorum”</em> şiirinin sonuna bir dize olarak eklemişte bu cümleyi…</p>
+<p align="center"><em>"Eskiler alıyorum</em><br>
+    <em>Alıp yıldız yapıyorum</em><br>
+  <em>Musiki ruhun gıdasıdır</em><br>
+  <em>Musikiye bayılıyorum</em><br>
+  <br>
+  <em>Şiir yazıyorum</em><br>
+  <em>Şiir yazıp eskiler alıyorum</em><br>
+  <em>Eskiler verip Musikiler alıyorum.</em><br>
+  <br>
+  <em>Bir de rakı şişesinde balık olsam".</em></p>
+<p align="center"><em><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_2860.jpg" alt="" width="600" height="337" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_2860.jpg"><br>
+</em></p>
+<h4 align="center">Memur Orhan Veli</h4>
+<p align="center">Orhan Veli, 1942’de PTT’deki görevinden ayrıldı ve askere gitti. Görevi, <em>“Gelibolu”</em>, Kavak Köyü’nde, 1945’e kadar sürdü. Şiirlerine devam ediyordu, ancak bu süreçte sadece 6 şiiri yayımlandı. 1945’te teğmen olarak terhis olduğunda, Milli Eğitim Bakanlığı’nın Tercüme Bürosu’nda işe başladı.</p>
+<p align="center">Çeviri işinde de oldukça iyiydi. Fransızcadan yaptığı çeviriler, bakanlığın klasikler serisinden yayımlandı. Şiir için verdiği ara Orhan Veli gibi kanında şiir akan bir adam için çok fazlaydı. Şubat 1945’te<em> “Vazgeçemediğim</em>” adını verdiği şiir kitabını yayımladı. Nisan 1945’te ise, <em>“Garip”</em>in ikinci baskısı yayımlandı. Bu kez sadece kendi şiirleri vardı.</p>
+<p align="center">Ardından 1946’da<em> “Destan Gibi”,</em> 1947’de de<em> “Yenisi” </em>adını verdiği kitaplarını çıkardı.</p>
+<p align="center">Tercüme Bürosu’ndaki işini de keyifle yapıyordu Orhan Veli. Ancak 1946 seçimlerinden sonra Hasan Ali Yücel’in Milli Eğitim Bakanlığı görevinden ayrılması, bu birimin önemini yitirmesine sebep oldu. Orhan Veli de çok geçmeden istifa etti. Bu istifa, bir kesim tarafından, Orhan Veli’nin memurluğa uyum sağlayamaması olarak yorumlandı. İstifasının ardından Mehmet Ali Aybar’ın <em>“Hür ve Zincirli Hürriyet”</em> adlı gazetelerinde deneme ve eleştiri yazıları yazdı. 1948’de ise, <em>“La Fontaine” </em>masallarını Türkçeye çevirdi.</p>
+<div>
+  <div align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_5369.jpg" alt="" width="600" height="337" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_5369.jpg"></div>
+</div>
+<h4 align="center">Yaprak dergisi</h4>
+<p align="center">Bakanlıktaki değişim sadece Orhan Veli’yi değil, arkadaşları Melih Cevdet, Oktay Rıfat, Bedri Rahmi Eyüboğlu, Abidin Dino, Necati Cumalı ile birkaç buluşmanın ardından, 1948 sonunda bir dergi çıkarmaya karar verdiler. Adının <em>“Yaprak”</em> olmasına karar verdikleri derginin masraflarını Mahmut Dikerdem karşılamıştı. Dergi, 15 günde bir yayımlanıyordu.</p>
+<p align="center">İlk sayısı, 1 Ocak 1949’da çıktı. Cahit Sıtkı Tarancı, Fazıl Hüsnü Dağlarca, Sait Faik Abasıyanık, Cahit Külebi gibi özel isimlerin eserlerini yayımlayarak, 1 Haziran 1950’ye kadar 28 sayı çıkardı.</p>
+<p align="center">Dikerdem, derginin açılmasındaki maddi desteği sağlamıştı; sahibi de Yazı İşleri Müdürü de Orhan Veli’ydi. Haliyle tüm sorumluluk kendisindeydi. Haliyle her problem, Orhan Veli’yi ilgilendiriyordu. Gün geldi, dergiyi ayakta tutabilmek için paltosunu dahi satmak zorunda kaldı. Onuncu sayıyı yayımlamak için de Abidin Dino’nun kendisine hediye ettiği resimleri elden çıkardı.</p>
+<p align="center">Bu dergi, Orhan Veli’nin kaleminin yanında fikir adamlığı yönünün de güçlü olduğunu ortaya çıkarmıştı. İş bitirici yönü, en az şiirleri kadar etkiliydi.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_6646.jpg" alt="" width="600" height="416" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_6646.jpg"></p>
+<p align="center"><em>(Orhan Veli ve Nahit Hanım)</em></p>
+<h4 align="center">Aşkları</h4>
+<p align="center">Orhan Veli, bir şairdi ve elbet aşklarından besleniyordu. Kısacık ömrünün son üç yılını Nahit Hanım’a duyduğu aşkla geçirdi. Ona kalpten mektuplar yazdı. Bu mektuplar, ölümünün üzerinden 64 yıl geçtikten sonra gün yüzüne çıkacak ve <em>“Yalnız Seni Arıyorum / Nahit Hanım’a Mektuplar” </em>adıyla basılacaktı.</p>
+<p align="center">Bu, bir gizli aşktı. Orhan Veli, derdini kimselere anlatamadıkça, kağıtlara döküyordu. Nahit Hanım, bu büyük aşkın yaşandığı zamanlarda, Yahya Kemal’in öğrencisi, Halil Veda Fıratlı ile evliydi. Daha sonra da Şair Arif Damar ile evlenecekti…</p>
+<p align="center">Orhan Veli, Nahit Hanım’a sırılsıklam aşık olmuştu. Aşkın uykusuz gözleri, ona durmadan şiirler, mektuplar yazdırıyordu. Ama bu aşk, Nahit Hanım’a bir türlü yetmedi. Orhan Veli de her satırında biraz daha aşkını ispat etme hırsına bürünerek yazdı cümlelerini…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_7542.jpg" alt="" width="600" height="501" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_7542.jpg"></p>
+<p align="center"><em>(Bella Eskenazi)</em></p>
+<p align="center">Sonra Bella vardı; Bella Eskenazi. Orhan Veli ve Bella, Bella henüz öğrenciyken tanıştı. Nahit Hanım vardı, ancak Bella ile de Orhan Veli’ye nice aşk şiirleri yazdıran bir arkadaşlık doğacaktı aralarında.</p>
+<p align="center">Ablası ve eniştesi, Ankara’ya taşındığında, Ankara’ya 35 km uzaklıktaki Hasanoğlan Köyü’nde Köy Enstitüleri’ni gördü Bella. Bu aşkın ilk tohumu, işte bu zamana aitti.</p>
+<p align="center">Bella, burada öğretmen olmak istiyordu. Ancak, adı, cinsiyeti ve gençliği bir çekince yarattı. Bella’nın buradaki görevini İsmet İnönü, <em>“Ha Bella, ha Ayşe ne fark eder!”</em> nidasıyla onayladı. Bella, İngilizce dersleri vermeye başlamıştı. İşte bu görevi sırasında tanıştılar Orhan Veli’yle.</p>
+<p align="center">Şu cümlelerle anlatıyordu Cumhuriyet’e verdiği bir röportajında Bella o günleri, <em>“Orhan Veli’yle o yemeklerde arkadaş olduk. Çok şıktı. Kıyafeti azdı ama çok hoş giyinirdi. Alkolik düzeyinde rakı içerdi ama tek taşkınlığını görmedim. Hatta hayatımda gördüğüm en terbiyeli insandı. O kadar çok içki içenini gördüm onun gibi ölçülü birine rastlamadım. Bir araya geldiğimiz bu toplantılarda hep birlikte yemekler yenir, sohbet edilir, çok güzel tartışmalar yaşanırdı. Entelektüel sohbetlerdi bunlar. Bir süre sonra ben başka bir odaya geçerdim. Çünkü sınavlarım vardı, aklım derslerimdeydi. Sessizce bir kenarda ders çalışırdım. Orhan Veli de yanımda dururdu. Daha doğrusu ben nereye gitsem, o da yanıma gelirdi. Ben sessiz biriydim ama o benden de sessizdi. Ben ders çalışırken yanımda sessizce durur ya şiir yazar ya da resim yapardı. Çok güzel resim yapardı. Mesela evimizde ‘Metamorfoz’ isimli bir tablo vardı, onun aynısını yapmıştı. Bu arada diğer herkes öbür odada sohbet ederdi”.</em></p>
+<p align="center"><em><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_4065.jpg" alt="" width="600" height="906" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_4065.jpg"><br>
+</em></p>
+<p align="center">Sonra şiirlerini açık ve seçik Bella’ya yazmaya başladı Orhan Veli. Bu ilk kez olduğunda çok etkilenmişti Bella. Orhan Veli, genç kızdan defterini istedi ve başladı yazmaya. Sonra hep ona hitap ettiği gibi ederek, <em>“Al bakalım düşes” </em>dedi. Bella, sessiz, sakin<em> “Sereserpe” </em>şiirinin büyüsüne çoktan kapılmıştı. Bu şiir, daha birçoklarının ilkiydi…</p>
+<p align="center">Yine o meşhur<em> “Anlatamıyorum” </em>şiirini de, Bella ile sessiz geçen bir oturmaları sırasında, kendisine “Neyin var?” diye soran Bella’ya cevaben yazmış; <em>“Sana hediyem olsun”</em> demişti.</p>
+<p align="center">Orhan Veli, her şeyden önce şiire aşıktı belki de…</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_3592.jpg" alt="" width="600" height="337" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_3592.jpg"></p>
+<p align="center"><em>(Orhan Veli kardeşleriyle)</em></p>
+<h4 align="center">Orhan Veli öldü</h4>
+<p align="center">Orhan Veli, <em>“Yaprak” </em>kapandıktan sonra İstanbul’a döndü. Birkaç ay sonra 10 Kasım’da bir haftalığına Ankara’ya gitti. Burada onu talihsiz bir kaza bekliyordu. Orhan Veli, belediyenin kazdığı bir çukura düştü ve başından yaralandı. Her şey yolunda gibiydi. İki gün sonra İstanbul’a döndü.</p>
+<p align="center">14 Kasım’da arkadaşı Erol Güney’e konuk olduğu öğle yemeği sırasında fenalaştı. Rahatsızlık, beyninde damar çatlamasıyla başlamıştı. Sebebi teşhis edilemedi ve Orhan Veli’ye alkol zehirlenmesi tedavisi uygulandı. Beyin kanaması geçirdiği anlaşıldığındaysa, artık çok geçti. Akşam saat 20.00’de komaya giren Orhan Veli, 23.20’de, Cerrahpaşa Hastanesi’nde, hayata veda etti. Henüz 36 yaşındaydı.</p>
+<p align="center">16 Kasım’da otopsisi yapılmadan önce Sanat Dostları Cemiyeti, Orhan Veli’nin yüzünün mulajını aldı. Cenazesi, 17 Kasım 1950’de, Beyazıt Camii’nden kaldırıldı. Cenazesi, özellikle sanatçılar, bilhassa yazarlar ve akademisyenlerden oluşan bir kalabalığın omzunda, Sirkeci’ye kadar taşındı. Oradan da bir otomobil ile Aşiyan Mezarlığı’na götürülerek defnedildi.</p>
+<p align="center"><img data-src="//icdn.ensonhaber.com/resimler/diger/orhan-veli_3502.jpg" alt="" width="600" height="756" src="https://icdn.ensonhaber.com/resimler/diger/orhan-veli_3502.jpg"></p>
+<h4 align="center">Son Yaprak</h4>
+<p align="center">Ölümünün ardından üzerindeki eşyalar kontrolden geçti. Fenalaştığı sırada üzerinde bulunan ceketinin cebinde bir diş fırçasının sarılı olduğu kağıda,<em> “Aşk Resmi Geçidi” </em>şiirini yazmıştı. Ömrünün son geçidini hissetmişçesine…</p>
+<p align="center">Arkadaşları, Orhan Veli’nin ardından güzel bir veda etmek istediler. Sonuçta Orhan Veli de üzerine düşeni yapmış, ölüme giderken bile onları şiirsiz bırakmamıştı. 1 Şubat 1951’de, tek sayı olarak, <em>“Son Yaprak” </em>çıkarıldı. İşte bu tek sayıda, Orhan Veli’nin son şiiri,<em> “Aşkın Resmi Geçidi”</em> de vardı….</p>
+<p align="center"><img src="5a0bcefbc03c0e12985372e9.jpg" width="770" height="435" alt="">&nbsp;</p>
+</div>
+
+
+
+</body>
+</html>
